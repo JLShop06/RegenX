@@ -2,222 +2,115 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RegenX - AI Business Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RegenX</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
     body {
-      background: linear-gradient(135deg, #020617, #0f172a);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
       color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
+      text-align: center;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
+      margin-bottom: 30px;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-
-    .logo h1 {
-      color: #38bdf8;
-      font-size: 28px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    select {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: none;
-      background: #1e293b;
-      color: white;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    .hero h2 {
-      font-size: 56px;
+      width: 160px;
+      height: auto;
       margin-bottom: 20px;
     }
 
-    .hero p {
-      font-size: 22px;
-      max-width: 700px;
-      margin: auto;
-      opacity: 0.85;
+    h1 {
+      font-size: 2.5rem;
+      margin: 10px 0;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 16px 35px;
-      background: #38bdf8;
-      color: #020617;
-      border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
+    p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      max-width: 600px;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      opacity: 0.6;
-      font-size: 14px;
+    select {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .content {
+      margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logo RengenX.png" alt="RegenX Logo">
-    <h1>RegenX</h1>
+  <header>
+    <img src="logo RengenX.png" alt="RegenX Logo" class="logo" />
+    <h1 id="title">Bienvenue sur RegenX</h1>
+    <p id="desc">
+      Une nouvelle génération d'application pensée pour l'Europe, scalable, rapide et intelligente.
+    </p>
+  </header>
+
+  <div class="content">
+    <label for="lang">🌍 Langue :</label>
+    <select id="lang" onchange="changeLang()">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+    </select>
   </div>
 
-  <nav>
-    <a href="#" id="nav-home">Accueil</a>
-    <a href="#" id="nav-services">Services</a>
-    <a href="#" id="nav-contact">Contact</a>
+  <script>
+    const translations = {
+      fr: {
+        title: "Bienvenue sur RegenX",
+        desc: "Une nouvelle génération d'application pensée pour l'Europe, scalable, rapide et intelligente."
+      },
+      en: {
+        title: "Welcome to RegenX",
+        desc: "A new generation of application built for Europe, scalable, fast and intelligent."
+      },
+      es: {
+        title: "Bienvenido a RegenX",
+        desc: "Una nueva generación de aplicación pensada para Europa, escalable, rápida e inteligente."
+      },
+      pt: {
+        title: "Bem-vindo ao RegenX",
+        desc: "Uma nova geração de aplicação pensada para a Europa, escalável, rápida e inteligente."
+      },
+      de: {
+        title: "Willkommen bei RegenX",
+        desc: "Eine neue Generation von Anwendungen für Europa, skalierbar, schnell und intelligent."
+      },
+      it: {
+        title: "Benvenuto su RegenX",
+        desc: "Una nuova generazione di applicazioni pensata per l’Europa, scalabile, veloce e intelligente."
+      }
+    };
 
-    <select id="languageSwitcher">
-      <option value="fr">FR</option>
-      <option value="en">EN</option>
-      <option value="es">ES</option>
-      <option value="de">DE</option>
-      <option value="it">IT</option>
-      <option value="pt">PT</option>
-      <option value="nl">NL</option>
-    </select>
-  </nav>
-</header>
+    function changeLang() {
+      const lang = document.getElementById("lang").value;
 
-<section class="hero">
-  <h2 id="title">Boostez votre business avec l'IA</h2>
-  <p id="subtitle">
-    Automatisez, optimisez et scalez votre activité grâce à des solutions IA nouvelle génération.
-  </p>
-  <a href="#" class="btn" id="cta">Commencer</a>
-</section>
-
-<footer>
-  © 2026 RegenX - All rights reserved
-</footer>
-
-<script>
-const translations = {
-  fr: {
-    home: "Accueil",
-    services: "Services",
-    contact: "Contact",
-    title: "Boostez votre business avec l'IA",
-    subtitle: "Automatisez, optimisez et scalez votre activité grâce à des solutions IA nouvelle génération.",
-    cta: "Commencer"
-  },
-  en: {
-    home: "Home",
-    services: "Services",
-    contact: "Contact",
-    title: "Boost your business with AI",
-    subtitle: "Automate, optimize and scale your business with next-generation AI solutions.",
-    cta: "Start Now"
-  },
-  es: {
-    home: "Inicio",
-    services: "Servicios",
-    contact: "Contacto",
-    title: "Impulsa tu negocio con IA",
-    subtitle: "Automatiza, optimiza y escala tu negocio con soluciones de IA de nueva generación.",
-    cta: "Comenzar"
-  },
-  de: {
-    home: "Startseite",
-    services: "Dienstleistungen",
-    contact: "Kontakt",
-    title: "Steigern Sie Ihr Business mit KI",
-    subtitle: "Automatisieren, optimieren und skalieren Sie Ihr Unternehmen mit KI-Lösungen.",
-    cta: "Starten"
-  },
-  it: {
-    home: "Home",
-    services: "Servizi",
-    contact: "Contatti",
-    title: "Potenzia il tuo business con l'IA",
-    subtitle: "Automatizza, ottimizza e scala il tuo business con soluzioni AI di nuova generazione.",
-    cta: "Inizia"
-  },
-  pt: {
-    home: "Início",
-    services: "Serviços",
-    contact: "Contato",
-    title: "Impulsione seu negócio com IA",
-    subtitle: "Automatize, otimize e escale seu negócio com soluções de IA de nova geração.",
-    cta: "Começar"
-  },
-  nl: {
-    home: "Home",
-    services: "Diensten",
-    contact: "Contact",
-    title: "Boost je bedrijf met AI",
-    subtitle: "Automatiseer, optimaliseer en schaal je bedrijf met next-gen AI-oplossingen.",
-    cta: "Start"
-  }
-};
-
-function changeLanguage(lang) {
-  document.documentElement.lang = lang;
-  document.getElementById("nav-home").textContent = translations[lang].home;
-  document.getElementById("nav-services").textContent = translations[lang].services;
-  document.getElementById("nav-contact").textContent = translations[lang].contact;
-  document.getElementById("title").textContent = translations[lang].title;
-  document.getElementById("subtitle").textContent = translations[lang].subtitle;
-  document.getElementById("cta").textContent = translations[lang].cta;
-}
-
-const browserLang = navigator.language.slice(0,2);
-const defaultLang = translations[browserLang] ? browserLang : "en";
-
-document.getElementById("languageSwitcher").value = defaultLang;
-changeLanguage(defaultLang);
-
-document.getElementById("languageSwitcher").addEventListener("change", (e) => {
-  changeLanguage(e.target.value);
-});
-</script>
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("desc").innerText = translations[lang].desc;
+    }
+  </script>
 
 </body>
 </html>
