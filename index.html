@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>
+    const translations = {
+      fr: {
+        home: '<span data-home>Accueil</span>', programs: '<span data-programs>Programmes</span>', nutrition: '<span data-nutrition>Nutrition</span>', contact: '<span data-contact>Contact</span>', title: 'Recover. Perform. Evolve.', subtitle: '<span data-subtitle>Application premium de récupération, coaching sportif, CBD et nutrition intelligente.</span>', button: '<span data-button>Commencer maintenant</span>'
+      },
+      en: {
+        home: 'Home', programs: 'Programs', nutrition: 'Nutrition', contact: 'Contact', title: 'Recover. Perform. Evolve.', subtitle: 'Premium recovery, coaching, CBD and smart nutrition app.', button: 'Start now'
+      },
+      pt: {
+        home: 'Início', programs: 'Programas', nutrition: 'Nutrição', contact: 'Contacto', title: 'Recupera. Evolui. Supera.', subtitle: 'Aplicação premium de recuperação, coaching, CBD e nutrição inteligente.', button: 'Começar agora'
+      },
+      es: {
+        home: 'Inicio', programs: 'Programas', nutrition: 'Nutrición', contact: 'Contacto', title: 'Recupera. Rinde. Evoluciona.', subtitle: 'App premium de recuperación, coaching, CBD y nutrición inteligente.', button: 'Empezar ahora'
+      },
+      it: {
+        home: 'Home', programs: 'Programmi', nutrition: 'Nutrizione', contact: 'Contatto', title: 'Recupera. Migliora. Evolvi.', subtitle: 'App premium per recupero, coaching, CBD e nutrizione intelligente.', button: 'Inizia ora'
+      }
+    };
+
+    function detectLanguage() {
+      const userLang = navigator.language.slice(0,2);
+      return translations[userLang] ? userLang : 'en';
+    }
+
+    function applyTranslations() {
+      const lang = detectLanguage();
+      const t = translations[lang];
+      document.querySelector('[data-home]').innerText = t.home;
+      document.querySelector('[data-programs]').innerText = t.programs;
+      document.querySelector('[data-nutrition]').innerText = t.nutrition;
+      document.querySelector('[data-contact]').innerText = t.contact;
+      document.querySelector('[data-title]').innerText = t.title;
+      document.querySelector('[data-subtitle]').innerText = t.subtitle;
+      document.querySelector('[data-button]').innerText = t.button;
+    }
+
+    window.onload = applyTranslations;
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RegenX - Recover. Perform. Evolve.</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #9cff2e;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #9cff2e;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #9cff2e;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 20px;
+      color: #cfcfcf;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #9cff2e;
+      color: black;
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 80px 10%;
+    }
+
+    .card {
+      background: #151515;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card h3 {
+      color: #9cff2e;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">RegenX</div>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Programmes</a>
+      <a href="#">Nutrition</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><span data-title>Recover. Perform. Evolve.</span></h1>
+    <p>Application premium de récupération, coaching sportif, CBD et nutrition intelligente.</p>
+    <a href="#" class="btn">Commencer maintenant</a>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h3>CBD Recovery</h3>
+      <p>Réduis douleur, inflammation et améliore ta récupération quotidienne.</p>
+    </div>
+
+    <div class="card">
+      <h3>Coaching Sport</h3>
+      <p>Programmes personnalisés musculation, mobilité et boxe.</p>
+    </div>
+
+    <div class="card">
+      <h3>Nutrition</h3>
+      <p>Protéines, BCAA, glutamine et routines optimisées pour performer.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 RegenX - All rights reserved.
+  </footer>
+</body>
+</html>
