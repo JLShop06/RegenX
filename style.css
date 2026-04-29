@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.logo {
+  width: 160px;
+  margin: 0 auto 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+p {
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lang {
+  margin-top: 20px;
+}
+
+a {
+  color: #00ffcc;
+  margin: 0 10px;
+  text-decoration: none;
+}
