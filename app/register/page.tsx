@@ -18,7 +18,7 @@ const registerSchema = z.object({
     .regex(/[0-9]/, 'Doit contenir au moins un chiffre'),
   confirmPassword: z.string(),
   gdpr: z.boolean().refine((val) => val === true, {
-    message: 'Tu dois accepter les conditions d\'utilisation',
+    message: "Tu dois accepter les conditions d'utilisation",
   }),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Les mots de passe ne correspondent pas',
@@ -65,6 +65,13 @@ export default function RegisterPage() {
       return;
     }
 
+    // Envoyer l'email de bienvenue (non bloquant)
+    try {
+      await fetch('/api/auth/welcome', { method: 'POST' });
+    } catch {
+      // Silently ignore - welcome email is non-critical
+    }
+
     setSuccess(true);
   }
 
@@ -79,7 +86,8 @@ export default function RegisterPage() {
           </div>
           <h2 className="text-2xl font-bold text-white mb-2">Vérifie ta boîte mail !</h2>
           <p className="text-slate-400 mb-6">
-            On t'a envoyé un lien de confirmation. Clique dessus pour activer ton compte RegenX.
+            On t'a envoyé un lien de confirmation <strong className="text-white">et un email de bienvenue</strong>.
+            Clique sur le lien pour activer ton compte RegenX.
           </p>
           <Link
             href="/login"
@@ -185,11 +193,11 @@ export default function RegisterPage() {
                 className="mt-1 w-4 h-4 accent-emerald-500 cursor-pointer"
               />
               <label htmlFor="gdpr" className="text-sm text-slate-400 cursor-pointer">
-                J'accepte les{' '}
+                {"J'accepte les "}
                 <Link href="/terms" className="text-emerald-400 hover:text-emerald-300 transition">CGU</Link>
-                {' '}et la{' '}
+                {' et la '}
                 <Link href="/privacy" className="text-emerald-400 hover:text-emerald-300 transition">politique de confidentialité</Link>
-                {' '}(obligatoire — conformité RGPD)
+                {' (obligatoire — conformité RGPD)'}
               </label>
             </div>
             {errors.gdpr && <p className="text-xs text-red-400 -mt-2">{errors.gdpr.message}</p>}
@@ -225,4 +233,4 @@ export default function RegisterPage() {
       </div>
     </main>
   );
-              }
+}
