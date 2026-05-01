@@ -21,7 +21,7 @@ export default function TabLayout() {
           height: 60,
         },
         tabBarLabelStyle: {
-          fontSize: 11,
+          fontSize: 10,
           fontWeight: '600',
         },
         headerShown: false,
@@ -44,14 +44,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="workouts"
         options={{
-          title: 'Programmes',
+          title: 'Sport',
           tabBarIcon: ({ color }) => <TabIcon name="barbell-outline" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="nutrition"
+        options={{
+          title: 'Nutrition',
+          tabBarIcon: ({ color }) => <TabIcon name="nutrition-outline" color={color} />,
         }}
       />
       <Tabs.Screen
         name="progress"
         options={{
-          title: 'Progression',
+          title: 'Progrès',
           tabBarIcon: ({ color }) => <TabIcon name="trending-up-outline" color={color} />,
         }}
       />
