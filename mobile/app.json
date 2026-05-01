@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "RegenX",
+    "slug": "regenx",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.regenx.app",
+      "buildNumber": "1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#059669"
+      },
+      "package": "com.regenx.app",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "scheme": "regenx",
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      },
+      "supabaseUrl": "EXPO_PUBLIC_SUPABASE_URL",
+      "supabaseAnonKey": "EXPO_PUBLIC_SUPABASE_ANON_KEY"
+    },
+    "newArchEnabled": true
+  }
+}
