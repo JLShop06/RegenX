@@ -1,4 +1,5 @@
 # RegenX - SaaS Fitness IA Platform
+<!-- Deploy trigger: 2026-05-01 -->
 
 RegenX est une plateforme SaaS complète de coaching fitness par IA, disponible sur Web et Mobile.
 
