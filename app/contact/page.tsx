@@ -7,11 +7,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Zap, Mail, MessageSquare, Shield, Clock } from 'lucide-react';
 
-export const metadata = {
-  title: 'Contact | RegenX',
-  description: 'Contactez l\'équipe RegenX pour toute question sur votre compte, facturation ou support.',
-};
-
 const contactSchema = z.object({
   name: z.string().min(2, 'Nom trop court'),
   email: z.string().email('Email invalide'),
