@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createCheckoutSession } from '@/lib/stripe';
+import { createCheckoutSession, createOrRetrieveCustomer } from '@/lib/stripe';
 import { createClient } from '@/lib/supabase/server';
 
 export const runtime = 'nodejs';
@@ -8,6 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const supabase = createClient();
     const { data: { user } } = await supabase.auth.getUser();
+
     if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -17,10 +18,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Stripe price not configured' }, { status: 500 });
     }
 
+    // Récupère ou crée le customer Stripe → retourne toujours un string garanti
+    const customerId = await createOrRetrieveCustomer({
+      email: user.email!,
+      userId: user.id,
+    });
+
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://regenx.eu';
     const url = await createCheckoutSession({
       userId: user.id,
-      customerId: user.stripe_customer_id,
+      customerId,
       priceId,
       successUrl: `${appUrl}/dashboard?checkout=success`,
       cancelUrl: `${appUrl}/pricing?checkout=cancel`,
