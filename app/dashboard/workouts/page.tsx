@@ -48,7 +48,7 @@ export default function WorkoutsPage() {
       body: JSON.stringify({
         messages: [{
           role: 'user',
-                    content: "Génère un programme d'entraînement complet. Réponds UNIQUEMENT en JSON valide avec: name, type (strength|cardio|hiit|yoga|recovery|mobility), difficulty (beginner|intermediate|advanced), duration_minutes, description, exercises (tableau avec name, sets, reps, rest_seconds)."
+                    content: Génère un programme d'entraînement complet. Réponds UNIQUEMENT en JSON valide avec: name, type (strength|cardio|hiit|yoga|recovery|mobility), difficulty (beginner|intermediate|advanced), duration_minutes, description, exercises (tableau avec name, sets, reps, rest_seconds).
         }]
       })
     });
