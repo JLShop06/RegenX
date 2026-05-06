@@ -200,7 +200,7 @@ export async function sendContactConfirmation(params: {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: SUPPORT_EMAIL,
-      replyTo: to,
+      reply_to: to,
       subject: `[Contact RegenX] ${subjectLabels[subject] ?? subject} - ${name}`,
       html: `<p><strong>De:</strong> ${name} (${to})</p>
              <p><strong>Sujet:</strong> ${subjectLabels[subject] ?? subject}</p>
