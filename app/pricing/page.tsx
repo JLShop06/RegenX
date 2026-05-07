@@ -1,9 +1,45 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import { CheckCircle, ArrowLeft, Zap, Users, Star } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { CheckCircle, ArrowLeft, Zap, Users, Star, Loader2 } from 'lucide-react';
+
+type PlanKey = 'starter' | 'pro' | 'equipe';
 
 export default function PricingPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState<PlanKey | null>(null);
+
+  async function handleSubscribe(plan: PlanKey) {
+    setLoading(plan);
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      if (res.status === 401) {
+        // Non connecté : rediriger vers register avec le plan
+        router.push('/register?plan=' + plan);
+        return;
+      }
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Erreur lors de la création de la session de paiement.');
+      }
+    } catch {
+      alert('Erreur réseau. Veuillez réessayer.');
+    } finally {
+      setLoading(null);
+    }
+  }
+
   const plans = [
     {
+      key: 'starter' as PlanKey,
       name: 'Starter',
       price: 29,
       icon: Zap,
@@ -18,10 +54,10 @@ export default function PricingPage() {
         'Accès web et mobile',
         'Conforme RGPD',
       ],
-      cta: 'Abonnement Starter',
       popular: false,
     },
     {
+      key: 'pro' as PlanKey,
       name: 'Pro',
       price: 99,
       icon: Star,
@@ -36,10 +72,10 @@ export default function PricingPage() {
         'Support prioritaire',
         'Conforme RGPD',
       ],
-      cta: 'Abonnement Pro',
       popular: true,
     },
     {
+      key: 'equipe' as PlanKey,
       name: 'Équipe',
       price: 149,
       icon: Users,
@@ -52,15 +88,14 @@ export default function PricingPage() {
         'Rapports de performance',
         'Conforme RGPD',
       ],
-      cta: 'Abonnement Équipe',
       popular: false,
     },
   ];
 
-  const colorMap: Record<string, {border: string; bg: string; badge: string; btn: string; icon: string}> = {
-    blue: {border: 'border-blue-500/30', bg: 'from-blue-500/20', badge: 'bg-blue-500', btn: 'bg-blue-500 hover:bg-blue-600', icon: 'text-blue-400'},
-    green: {border: 'border-green-500/30', bg: 'from-green-500/20', badge: 'bg-green-500', btn: 'bg-green-500 hover:bg-green-600', icon: 'text-green-400'},
-    purple: {border: 'border-purple-500/30', bg: 'from-purple-500/20', badge: 'bg-purple-500', btn: 'bg-purple-500 hover:bg-purple-600', icon: 'text-purple-400'},
+  const colorMap: Record<string, {border: string; bg: string; badge: string; btn: string; icon: string; btnDisabled: string}> = {
+    blue: {border: 'border-blue-500/30', bg: 'from-blue-500/20', badge: 'bg-blue-500', btn: 'bg-blue-500 hover:bg-blue-600', icon: 'text-blue-400', btnDisabled: 'bg-blue-300'},
+    green: {border: 'border-green-500/30', bg: 'from-green-500/20', badge: 'bg-green-500', btn: 'bg-green-500 hover:bg-green-600', icon: 'text-green-400', btnDisabled: 'bg-green-300'},
+    purple: {border: 'border-purple-500/30', bg: 'from-purple-500/20', badge: 'bg-purple-500', btn: 'bg-purple-500 hover:bg-purple-600', icon: 'text-purple-400', btnDisabled: 'bg-purple-300'},
   };
 
   return (
@@ -78,6 +113,7 @@ export default function PricingPage() {
           {plans.map((plan) => {
             const colors = colorMap[plan.color];
             const Icon = plan.icon;
+            const isLoading = loading === plan.key;
             return (
               <div key={plan.name} className={"bg-gradient-to-b " + colors.bg + " to-transparent border " + colors.border + " rounded-3xl p-8 relative flex flex-col"}>
                 {plan.popular && (
@@ -104,9 +140,20 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/register" className={"block w-full " + colors.btn + " text-white font-bold py-3 rounded-xl text-center"}>
-                  {plan.cta}
-                </Link>
+                <button
+                  onClick={() => handleSubscribe(plan.key)}
+                  disabled={loading !== null}
+                  className={"flex items-center justify-center gap-2 w-full " + (loading !== null ? colors.btnDisabled : colors.btn) + " text-white font-bold py-3 rounded-xl transition-all"}
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Chargement...
+                    </>
+                  ) : (
+                    'S’abonner'
+                  )}
+                </button>
               </div>
             );
           })}
