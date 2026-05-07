@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { CheckCircle, Zap, Shield, Brain, Dumbbell, Apple, Leaf, Star, ArrowRight, Smartphone, Loader2 } from 'lucide-react';
-
+h
 type PlanKey = 'starter' | 'pro' | 'equipe';
 
 const features = [
@@ -289,7 +289,7 @@ export default function LandingPage() {
               <Link href="/privacy" className="hover:text-white transition">Confidentialité</Link>
               <Link href="/contact" className="hover:text-white transition">Contact</Link>
             </div>
-            <p className="text-xs text-slate-600">© 2026 RegenX — Hébergé en EU — Conforme RGPD</p>
+            <p className="text-xs text-slate-600">© 2026 RegenX SAS — Hébergé en EU — Conforme RGPD</p>
           </div>
         </div>
       </footer>
