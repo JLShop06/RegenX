@@ -44,8 +44,8 @@ export default async function DashboardPage() {
         {!active && (
           <div className="bg-amber-50 border border-amber-200 p-6 rounded-xl mb-8">
             <h2 className="font-bold text-amber-900 mb-2">Débloque RegenX Premium</h2>
-            <p className="text-amber-800 text-sm mb-4">Accès illimité au coach IA, programmes personnalisés, nutrition + récupération. 99€/mois.</p>
-            <Link href="/pricing" className="inline-block px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg">S'abonner →</Link>
+            <p className="text-amber-800 text-sm mb-4">Accès illimité au coach IA, programmes personnalisés, nutrition + récupération.</p>
+            <Link href="/pricing" className="inline-block px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg">Choisir un forfait →</Link>
           </div>
         )}
 
@@ -80,9 +80,7 @@ export default async function DashboardPage() {
             </span>
           </div>
           <p className="text-sm text-slate-500">
-            {active
-              ? 'Ton abonnement RegenX Premium est actif. Profite de toutes les fonctionnalités !'
-              : 'Passe à Premium pour débloquer le coach IA, la génération de programmes et les plans nutritionnels.'}
+            {active ? 'Ton abonnement RegenX Premium est actif. Profite de toutes les fonctionnalités !' : 'Passe à Premium pour débloquer le coach IA, la génération de programmes et les plans nutritionnels.'}
           </p>
           {!active && (
             <Link href="/pricing" className="inline-block mt-4 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg">
