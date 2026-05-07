@@ -1,7 +1,7 @@
 'use client';
-
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { CheckCircle, Zap, Shield, Brain, Dumbbell, Apple, Leaf, Star, ArrowRight, Smartphone, Loader2 } from 'lucide-react';
 
@@ -31,7 +31,7 @@ const plans = [
     name: 'Pro',
     price: '99',
     period: 'mois',
-    desc: 'Pour les passionnés qui veulent des résultats',
+    desc: 'Pour les passionés qui veulent des résultats',
     features: ['IA Coach illimitée 24h/24', 'Programmes sport personnalisés', 'Plans nutritionnels adaptés', 'Suivi progression avancé', 'Support prioritaire'],
     highlight: true,
     badge: 'Populaire',
@@ -50,7 +50,7 @@ const plans = [
 const testimonials = [
   {name: 'Sophie M.', role: 'Coureuse amateur', avatar: 'SM', text: 'En 3 mois avec RegenX, j’ai amélioré mon 10km de 8 minutes. Le coach IA ajuste mes séances chaque semaine.', stars: 5},
   {name: 'Thomas K.', role: 'Coach fitness', avatar: 'TK', text: 'J’utilise RegenX pour créer les programmes de mes 6 clients. Gain de temps énorme et résultats au rendez-vous.', stars: 5},
-  {name: 'Camille D.', role: 'Prise de masse', avatar: 'CD', text: '+4 kg de muscle en 4 mois. Le plan nutritionnel est précis et les recettes sont vraiment bonnes.', stars: 5},
+  {name: 'Camille D.', role: 'Prise de masse', avatar: 'CD', text: '+4 kg de muscle en 4 mois. Le plan nutritionnel est précis et les recettes sont vraiment bonnes.', stars: 5},
 ];
 
 export default function LandingPage() {
@@ -81,13 +81,12 @@ export default function LandingPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+      {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
+              <Image src="/logo RengenX.png" alt="RegenX" width={36} height={36} className="rounded-lg object-contain" />
               <span className="text-xl font-black tracking-tight">RegenX</span>
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm text-slate-400">
@@ -110,6 +109,7 @@ export default function LandingPage() {
         </div>
       </nav>
 
+      {/* Hero */}
       <section className="pt-32 pb-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
@@ -137,7 +137,7 @@ export default function LandingPage() {
             </Link>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            {['Remboursé si rétractation sous 14 jours', 'Résiliable à tout moment', 'Conforme RGPD'].map((t) => (
+            {['Remboursé si rétractation sous 14 jours', 'Résiliable à tout moment', 'Conforme RGPD'].map((t) => (
               <span key={t} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-emerald-500" />
                 {t}
@@ -147,9 +147,10 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Stats */}
       <section className="py-8 border-y border-white/5">
         <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-12 text-center">
-          {[['2 000+', 'Athlètes actifs'], ['98 %', 'Taux de satisfaction'], ['4,9/5', 'Note moyenne'], ['EU', 'Hébergement']].map(([n, l]) => (
+          {[['2 000+', 'Athlètes actifs'], ['98 %', 'Taux de satisfaction'], ['4,9/5', 'Note moyenne'], ['EU', 'Hébergement']].map(([n, l]) => (
             <div key={l}>
               <div className="text-3xl font-black text-emerald-400">{n}</div>
               <div className="text-sm text-slate-500 mt-1">{l}</div>
@@ -158,6 +159,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Features */}
       <section id="features" className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -178,6 +180,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Testimonials */}
       <section id="testimonials" className="py-24 px-4 bg-white/2">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -206,6 +209,7 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Pricing */}
       <section id="pricing" className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -214,7 +218,7 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {plans.map((p) => (
-              <div key={p.name} className={"relative rounded-2xl p-7 border transition-all duration-200 " + (p.highlight ? 'bg-emerald-600/10 border-emerald-500/40 ring-1 ring-emerald-500/30 shadow-2xl' : 'bg-white/3 border-white/8')}>
+              <div key={p.name} className={'relative rounded-2xl p-7 border transition-all duration-200 ' + (p.highlight ? 'bg-emerald-600/10 border-emerald-500/40 ring-1 ring-emerald-500/30 shadow-2xl' : 'bg-white/3 border-white/8')}>
                 {p.badge && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">{p.badge}</div>
                 )}
@@ -237,7 +241,7 @@ export default function LandingPage() {
                 <button
                   onClick={() => handleSubscribe(p.key)}
                   disabled={loading !== null}
-                  className={"flex items-center justify-center gap-2 w-full font-semibold py-3 rounded-xl transition " + (p.highlight ? 'bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 text-white' : 'bg-white/8 hover:bg-white/12 disabled:opacity-50 text-white border border-white/10')}
+                  className={'flex items-center justify-center gap-2 w-full font-semibold py-3 rounded-xl transition ' + (p.highlight ? 'bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 text-white' : 'bg-white/8 hover:bg-white/12 disabled:opacity-50 text-white border border-white/10')}
                 >
                   {loading === p.key ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
                   S’abonner
@@ -246,18 +250,19 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-center text-xs text-slate-500 mt-8">
-            Tous les prix incluent la TVA — Résiliable à tout moment — Remboursé si rétractation sous 14 jours — Conforme RGPD
+            Tous les prix incluent la TVA — Résiliable à tout moment — Remboursé si rétractation sous 14 jours — Conforme RGPD
           </p>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-gradient-to-br from-emerald-900/40 to-slate-900/40 border border-emerald-500/20 rounded-3xl p-12">
             <h2 className="text-4xl font-black mb-4">Prêt à commencer ?</h2>
             <p className="text-slate-400 text-lg mb-8">
-              Rejoins les 2 000+ athlètes qui ont transformé leur corps avec RegenX.<br />
-              Remboursé si rétractation dans les 14 jours suivant l’abonnement.
+              Rejoins les 2 000+ athlètes qui ont transformé leur corps avec RegenX.<br />
+              Remboursé si rétractation dans les 14 jours suivant l’abonnement.
             </p>
             <button
               onClick={() => handleSubscribe('pro')}
@@ -271,13 +276,12 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-white/5 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-emerald-500 rounded-lg flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
+              <Image src="/logo RengenX.png" alt="RegenX" width={28} height={28} className="rounded-lg object-contain" />
               <span className="font-black">RegenX</span>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
@@ -291,4 +295,4 @@ export default function LandingPage() {
       </footer>
     </main>
   );
-      }
+                  }
