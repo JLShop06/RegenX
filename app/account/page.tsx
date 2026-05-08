@@ -32,7 +32,7 @@ export default async function AccountPage() {
       {/* Sidebar */}
       <aside style={{ width: '240px', flexShrink: 0, position: 'fixed', top: 0, left: 0, height: '100vh', backgroundColor: '#0d0d0d', borderRight: '1px solid rgba(200,146,42,0.12)', display: 'flex', flexDirection: 'column', zIndex: 40 }}>
         <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(200,146,42,0.1)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <Image src="/logo RengenX.png" alt="RegenX" width={36} height={36} style={{ objectFit: 'contain' }} />
+          <Image src="/logo RengenX.png" alt="RegenX" width={56} height={56} style={{ objectFit: 'contain' }} />
         </div>
         <nav style={{ flex: 1, padding: '1rem 0.75rem', display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {navItems.map(item => (
