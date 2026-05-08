@@ -38,7 +38,7 @@ export default function LoginPage() {
         }}
       >
         <div className="flex items-center gap-3">
-          <Image src="/logo RengenX.png" alt="RegenX" width={44} height={44} className="object-contain" />
+          <Image src="/logo RengenX.png" alt="RegenX" width={80} height={80} className="object-contain" />
         </div>
         <div>
           <div
@@ -74,7 +74,7 @@ export default function LoginPage() {
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
           <div className="flex justify-center mb-10 lg:hidden">
-            <Image src="/logo RengenX.png" alt="RegenX" width={56} height={56} className="object-contain" />
+            <Image src="/logo RengenX.png" alt="RegenX" width={96} height={96} className="object-contain" />
           </div>
 
           <div className="mb-10">
