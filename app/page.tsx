@@ -66,6 +66,12 @@ export default function LandingPage() {
             S’abonner
             </button>
           </div>
+
+          {/* Partenaire Green Therapy */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', marginTop: '3rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(200,146,42,0.1)' }}>
+            <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)' }}>En partenariat avec</div>
+            <Image src="/logo-green-therapy.png" alt="Green Therapy" width={160} height={60} style={{ objectFit: 'contain', opacity: 0.85, filter: 'brightness(1.1)' }} />
+          </div>
         </div>
       </nav>
 
@@ -116,6 +122,13 @@ export default function LandingPage() {
             <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: '1rem' }}>Fonctionnalités</div>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.03em' }}>Tout ce dont tu as besoin</h2>
           </div>
+
+          {/* Partenaire Eric Favre */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem' }}>
+            <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)' }}>Nutrition officielle</div>
+            <Image src="/logo-eric-favre.png" alt="Eric Favre" width={160} height={60} style={{ objectFit: 'contain', opacity: 0.85, filter: 'brightness(1.1)' }} />
+          </div>
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {features.map(f => (
               <div key={f.title} style={{ backgroundColor: '#111111', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '4px', padding: '1.75rem', transition: 'border-color 0.2s' }} onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(200,146,42,0.25)'} onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.06)'}>
