@@ -53,7 +53,7 @@ function RegisterForm() {
     <div className="min-h-screen flex" style={{ backgroundColor: '#0a0a0a' }}>
       <div className="hidden lg:flex flex-col justify-between w-1/2 p-12" style={{ background: 'linear-gradient(160deg, #0f0f0f 0%, #151208 60%, #1a1506 100%)', borderRight: '1px solid rgba(200,146,42,0.15)' }}>
         <div className="flex items-center gap-3">
-          <Image src="/logo RengenX.png" alt="RegenX" width={44} height={44} className="object-contain" />
+          <Image src="/logo RengenX.png" alt="RegenX" width={80} height={80} className="object-contain" />
         </div>
         <div>
           <div className="text-xs font-semibold tracking-[0.3em] uppercase mb-4" style={{ color: '#C8922A' }}>★ Club Premium</div>
@@ -76,7 +76,7 @@ function RegisterForm() {
       <div className="flex-1 flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-sm">
           <div className="flex justify-center mb-10 lg:hidden">
-            <Image src="/logo RengenX.png" alt="RegenX" width={56} height={56} className="object-contain" />
+            <Image src="/logo RengenX.png" alt="RegenX" width={96} height={96} className="object-contain" />
           </div>
           <div className="mb-10">
             <div className="text-xs font-semibold tracking-[0.25em] uppercase mb-3" style={{ color: '#C8922A' }}>Création de compte</div>
