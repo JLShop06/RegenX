@@ -21,7 +21,7 @@ function ConfirmContent() {
       <div className="relative z-10 w-full max-w-md">
         <div className="flex justify-center mb-12">
           <Link href="/">
-            <Image src="/logo RengenX.png" alt="RegenX" width={72} height={72} className="object-contain" />
+            <Image src="/logo RengenX.png" alt="RegenX" width={100} height={100} className="object-contain" />
           </Link>
         </div>
         <div className="text-center px-10 py-12" style={{ backgroundColor: '#111111', border: '1px solid rgba(200,146,42,0.2)', borderRadius: '4px' }}>
