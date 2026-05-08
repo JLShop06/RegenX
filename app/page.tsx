@@ -66,12 +66,6 @@ export default function LandingPage() {
             S’abonner
             </button>
           </div>
-
-          {/* Partenaire Green Therapy */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', marginTop: '3rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(200,146,42,0.1)' }}>
-            <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)' }}>En partenariat avec</div>
-            <Image src="/logo-green-therapy.png" alt="Green Therapy" width={160} height={60} style={{ objectFit: 'contain', opacity: 0.85, filter: 'brightness(1.1)' }} />
-          </div>
         </div>
       </nav>
 
@@ -102,6 +96,12 @@ export default function LandingPage() {
             {['Remboursement 14 jours', 'Sans engagement', 'Conforme RGPD'].map(t => (
               <span key={t} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><CheckCircle style={{ width: 14, height: 14, color: GOLD }} />{t}</span>
             ))}
+          </div>
+
+          {/* Partenaire Green Therapy */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '3rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(200,146,42,0.1)' }}>
+            <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)' }}>En partenariat avec</div>
+            <Image src="/logo-green-therapy.png" alt="Green Therapy" width={180} height={70} style={{ objectFit: 'contain', opacity: 0.9 }} />
           </div>
         </div>
       </section>
