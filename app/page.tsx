@@ -53,7 +53,7 @@ export default function LandingPage() {
       <nav style={{ position: 'fixed', top: 0, width: '100%', zIndex: 50, backgroundColor: 'rgba(10,10,10,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(200,146,42,0.12)' }}>
         <div style={{ maxWidth: '1152px', margin: '0 auto', padding: '0 1.5rem', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Image src="/logo RengenX.png" alt="RegenX" width={36} height={36} style={{ objectFit: 'contain' }} />
+            <Image src="/logo RengenX.png" alt="RegenX" width={64} height={64} style={{ objectFit: 'contain' }} />
           </div>
           <div style={{ display: 'flex', gap: '2rem', fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }} className="hidden md:flex">
             {[['#features', 'Fonctionnalités'], ['#pricing', 'Tarifs'], ['#testimonials', 'Témoignages']].map(([h, l]) => (
@@ -201,7 +201,7 @@ export default function LandingPage() {
       <footer style={{ borderTop: '1px solid rgba(200,146,42,0.12)', padding: '3rem 1.5rem' }}>
         <div style={{ maxWidth: '1152px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Image src="/logo RengenX.png" alt="RegenX" width={28} height={28} style={{ objectFit: 'contain' }} />
+            <Image src="/logo RengenX.png" alt="RegenX" width={56} height={56} style={{ objectFit: 'contain' }} />
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
             {[['CGU', '/terms'], ['Confidentialité', '/privacy'], ['Mentions légales', '/mentions-legales'], ['Contact', '/contact']].map(([l, h]) => (
