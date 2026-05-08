@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique Eric Favre - RegenX</title>
+  <meta name="description" content="Boutique officielle Eric Favre - Protéines, Packs Musculation, Compléments alimentaires" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    .header {
+      background: #111;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 2px solid #00c896;
+    }
+    .header img { height: 60px; }
+    .header h1 { font-size: 1.5rem; color: #00c896; }
+    .header p { opacity: 0.7; font-size: 0.9rem; }
+    .back-btn {
+      margin-left: auto;
+      background: #00c896;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-btn:hover { background: #00a77d; }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    }
+    .hero h2 { font-size: 2rem; margin-bottom: 15px; }
+    .hero p { opacity: 0.8; max-width: 600px; margin: 0 auto 30px; }
+    .hero .partner-logo { height: 80px; margin-bottom: 20px; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .product-card:hover { transform: translateY(-4px); border-color: #00c896; }
+    .product-img {
+      width: 100%;
+      height: 200px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .product-info { padding: 20px; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .product-info .desc { opacity: 0.7; font-size: 0.9rem; margin-bottom: 12px; }
+    .product-info .price { color: #00c896; font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; }
+    .product-info .badge {
+      display: inline-block;
+      background: rgba(0,200,150,0.15);
+      color: #00c896;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-bottom: 12px;
+    }
+    .btn-acheter {
+      display: block;
+      background: #00c896;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn-acheter:hover { background: #00a77d; }
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #111;
+      border-top: 1px solid #2a2a2a;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+    .section-title {
+      text-align: center;
+      padding: 40px 20px 0;
+      font-size: 1.8rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      opacity: 0.6;
+      padding: 10px 20px 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <img src="/logo-eric-favre.png" alt="Eric Favre" />
+    <div>
+      <h1>Boutique Eric Favre</h1>
+      <p>Partenaire officiel RegenX</p>
+    </div>
+    <a href="/" class="back-btn">← Retour RegenX</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="/logo-eric-favre.png" alt="Eric Favre" class="partner-logo" />
+    <h2>Nutrition Sport de Qualité Professionnelle</h2>
+    <p>Découvrez la gamme complète Eric Favre : protéines, créatines, brûleurs de graisses et packs musculation sélectionnés pour les athlètes RegenX.</p>
+  </section>
+
+  <!-- PRODUCTS -->
+  <h2 class="section-title">Nos Produits Phares</h2>
+  <p class="section-subtitle">Sélection exclusive partenaire RegenX × Eric Favre</p>
+
+  <div class="products">
+
+    <div class="product-card">
+      <div class="product-img">🥛</div>
+      <div class="product-info">
+        <span class="badge">⭐ Bestseller</span>
+        <h3>Whey Protéine Pro</h3>
+        <p class="desc">Protéine de lactosérum premium, 78% de protéines par portion. Idéale post-entraînement.</p>
+        <div class="price">34,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">💪</div>
+      <div class="product-info">
+        <span class="badge">🔥 Populaire</span>
+        <h3>Créatine Monohydrate</h3>
+        <p class="desc">Créatine pure pour augmenter force et performance musculaire. 500g, qualité certifiée.</p>
+        <div class="price">24,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">🔥</div>
+      <div class="product-info">
+        <span class="badge">Nouveau</span>
+        <h3>Brûleur Thermogénique</h3>
+        <p class="desc">Formule avancée pour soutenir la perte de poids et booster le métabolisme.</p>
+        <div class="price">39,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">⚡</div>
+      <div class="product-info">
+        <span class="badge">Pro</span>
+        <h3>Pack Prise de Masse</h3>
+        <p class="desc">Combinaison Whey + Créatine + BCAA pour une prise de masse optimale. Économisez 20%.</p>
+        <div class="price">79,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">🌿</div>
+      <div class="product-info">
+        <span class="badge">Récupération</span>
+        <h3>BCAA 2:1:1</h3>
+        <p class="desc">Acides aminés essentiels pour la récupération musculaire et la réduction de la fatigue.</p>
+        <div class="price">29,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">🏋️</div>
+      <div class="product-info">
+        <span class="badge">Pack Elite</span>
+        <h3>Pack Sèche Complète</h3>
+        <p class="desc">Programme nutrition complet pour la phase de sèche : brûleur + protéines + oméga 3.</p>
+        <div class="price">89,90 €</div>
+        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 RegenX × Eric Favre — Partenariat officiel</p>
+    <p style="margin-top:8px">Produits disponibles sur <a href="https://www.eric-favre.com" target="_blank" style="color:#00c896">eric-favre.com</a></p>
+  </footer>
+
+</body>
+</html>
