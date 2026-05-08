@@ -9,7 +9,7 @@ type PlanKey = 'starter' | 'pro' | 'equipe';
 
 const features = [
   { icon: Brain, title: 'Coach IA Personnalisé', desc: 'Ton programme s’adapte en temps réel à tes objectifs, ton niveau et tes préférences grâce à l’IA.' },
-  { icon: Dumbbell, title: 'Programmes Entraînement', desc: 'Des séances générées automatiquement : musculation, cardio, HIIT, mobilité à la maison ou en salle.' },
+  { icon: Dumbbell, title: 'Programmes Entraîhnement', desc: 'Des séances générées automatiquement : musculation, cardio, HIIT, mobilité à la maison ou en salle.' },
   { icon: Apple, title: 'Plans Nutritionnels', desc: 'Menus hebdomadaires équilibrés avec macros calculés selon ton profil et tes restrictions alimentaires.' },
   { icon: Leaf, title: 'Suivi de Progression', desc: 'Visualise tes gains, ta charge d’entraînement et tes tendances nutritionnelles semaine après semaine.' },
   { icon: Smartphone, title: 'App Mobile iOS & Android', desc: 'Accède à tout depuis ton téléphone. Mode hors-ligne disponible pour t’entraîner n’importe où.' },
@@ -102,7 +102,7 @@ export default function LandingPage() {
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '3rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(200,146,42,0.1)' }}>
             <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)' }}>En partenariat avec</div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
-              <Image src="/logo-green-therapy.png" alt="Green Therapy" width={180} height={70} style={{ objectFit: 'contain', opacity: 0.9 }} />
+              <a href="https://www.green-therapy.pt" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', cursor: 'pointer' }}><Image src="/logo-green-therapy.png" alt="Green Therapy" width={180} height={70} style={{ objectFit: 'contain', opacity: 0.9 }} /></a>
               <Image src="/logo-eric-favre.png" alt="Eric Favre" width={160} height={60} style={{ objectFit: 'contain', opacity: 0.85, filter: 'brightness(1.1)' }} />
             </div>
           </div>
