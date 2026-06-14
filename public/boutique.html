@@ -1,170 +1,179 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique Eric Favre — RegenX</title>
-  <meta name="description" content="Boutique officielle Eric Favre - Proteines, Packs Musculation, Complements alimentaires haut de gamme" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root{
-      --noir:#0a0a0c; --noir-2:#111114; --carte:#141416;
-      --or:#c8a85a; --or-clair:#e7d3a1; --champagne:#f2e8d2;
-      --texte:#efece4; --texte-doux:#a7a299; --ligne:rgba(200,168,90,0.22);
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Jost',sans-serif;background:var(--noir);color:var(--texte);line-height:1.7;font-weight:300;letter-spacing:.3px;-webkit-font-smoothing:antialiased;}
-    h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.5px;}
-    a{color:inherit;}
-    .header{position:sticky;top:0;z-index:50;background:rgba(10,10,12,0.82);backdrop-filter:blur(14px);padding:22px 48px;display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--ligne);}
-    .header .brand{display:flex;align-items:center;gap:18px;}
-    .header img{height:46px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));}
-    .header .brand-txt h1{font-size:1.35rem;color:var(--champagne);line-height:1.2;}
-    .header .brand-txt p{font-size:.7rem;color:var(--or);letter-spacing:3px;text-transform:uppercase;font-weight:400;}
-    .back-btn{margin-left:auto;border:1px solid var(--or);color:var(--or-clair);padding:11px 26px;border-radius:2px;text-decoration:none;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;transition:all .4s ease;}
-    .back-btn:hover{background:var(--or);color:var(--noir);}
-    .hero{position:relative;text-align:center;padding:120px 24px 100px;background:radial-gradient(ellipse at 50% 0%, rgba(200,168,90,0.10), transparent 60%),linear-gradient(180deg,var(--noir-2) 0%,var(--noir) 100%);}
-    .hero .eyebrow{color:var(--or);letter-spacing:6px;text-transform:uppercase;font-size:.72rem;margin-bottom:26px;}
-    .hero .partner-logo{height:74px;margin-bottom:34px;}
-    .hero h2{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;margin-bottom:24px;color:var(--champagne);}
-    .hero h2 em{font-style:italic;color:var(--or-clair);}
-    .hero p{color:var(--texte-doux);max-width:560px;margin:0 auto;font-size:1.02rem;font-weight:300;}
-    .divider{width:64px;height:1px;background:var(--or);margin:40px auto 0;position:relative;}
-    .divider::before,.divider::after{content:"";position:absolute;top:50%;width:5px;height:5px;background:var(--or);border-radius:50%;transform:translateY(-50%);}
-    .divider::before{left:-14px;} .divider::after{right:-14px;}
-    .section-head{text-align:center;padding:90px 20px 0;}
-    .section-head .eyebrow{color:var(--or);letter-spacing:5px;text-transform:uppercase;font-size:.7rem;}
-    .section-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:14px;color:var(--champagne);}
-    .section-head p{color:var(--texte-doux);margin-top:12px;font-size:.95rem;}
-    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:34px;padding:64px 48px 40px;max-width:1240px;margin:0 auto;}
-    .product-card{background:linear-gradient(180deg,var(--carte) 0%,#0e0e10 100%);border:1px solid rgba(200,168,90,0.16);border-radius:4px;overflow:hidden;transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;display:flex;flex-direction:column;}
-    .product-card:hover{transform:translateY(-8px);border-color:var(--or);box-shadow:0 26px 60px -30px rgba(200,168,90,0.5);}
-    .product-img{position:relative;width:100%;aspect-ratio:1/1;background:radial-gradient(circle at 50% 38%, rgba(200,168,90,0.10), transparent 65%),#0c0c0e;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(200,168,90,0.14);overflow:hidden;}
-    .product-img .photo{width:100%;height:100%;object-fit:cover;display:block;}
-    .product-img .photo-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(200,168,90,0.45);text-align:center;padding:20px;}
-    .product-img .photo-slot .mono{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--or);border:1px solid var(--or);border-radius:50%;width:74px;height:74px;display:flex;align-items:center;justify-content:center;}
-    .product-img .photo-slot span{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;}
-    .product-info{padding:30px 28px 34px;display:flex;flex-direction:column;flex:1;}
-    .badge{align-self:flex-start;border:1px solid var(--or);color:var(--or-clair);padding:5px 14px;border-radius:2px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
-    .product-info h3{font-size:1.6rem;margin-bottom:12px;color:var(--champagne);}
-    .product-info .desc{color:var(--texte-doux);font-size:.9rem;margin-bottom:22px;flex:1;}
-    .product-info .price{color:var(--or-clair);font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;margin-bottom:24px;}
-    .btn-acheter{display:block;text-align:center;background:linear-gradient(135deg,var(--or) 0%,var(--or-clair) 100%);color:var(--noir);padding:14px;border-radius:2px;text-decoration:none;font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:filter .35s ease,transform .35s ease;}
-    .btn-acheter:hover{filter:brightness(1.08);transform:translateY(-2px);}
-    .footer{text-align:center;padding:70px 24px 56px;background:var(--noir-2);border-top:1px solid var(--ligne);margin-top:60px;}
-    .footer .f-divider{width:50px;height:1px;background:var(--or);margin:0 auto 26px;}
-    .footer p{color:var(--texte-doux);font-size:.85rem;letter-spacing:1px;}
-    .footer .copy{color:var(--or);letter-spacing:3px;text-transform:uppercase;font-size:.7rem;margin-bottom:10px;}
-    .footer a{color:var(--or-clair);text-decoration:none;border-bottom:1px solid var(--ligne);}
-    @media(max-width:600px){.header{padding:18px 22px;}.products{padding:48px 22px;}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Boutique Eric Favre — RegenX</title>
+<meta name="description" content="Boutique officielle Eric Favre - Proteines, Packs Musculation, Complements alimentaires haut de gamme" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+--noir:#0a0a0c; --noir-2:#111114; --carte:#141416;
+--or:#c8a85a; --or-clair:#e7d3a1; --champagne:#f2e8d2;
+--texte:#efece4; --texte-doux:#a7a299; --ligne:rgba(200,168,90,0.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--noir);color:var(--texte);line-height:1.7;font-weight:300;letter-spacing:.3px;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.5px;}
+a{color:inherit;}
+.header{position:sticky;top:0;z-index:50;background:rgba(10,10,12,0.82);backdrop-filter:blur(14px);padding:22px 48px;display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--ligne);}
+.header .brand{display:flex;align-items:center;gap:18px;}
+.header img{height:46px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));}
+.header .brand-txt h1{font-size:1.35rem;color:var(--champagne);line-height:1.2;}
+.header .brand-txt p{font-size:.7rem;color:var(--or);letter-spacing:3px;text-transform:uppercase;font-weight:400;}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:14px;}
+.back-btn{border:1px solid var(--or);color:var(--or-clair);padding:11px 26px;border-radius:2px;text-decoration:none;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;transition:all .4s ease;}
+.back-btn:hover{background:var(--or);color:var(--noir);}
+.cart-link{position:relative;border:1px solid var(--or);color:var(--or-clair);padding:11px 22px;border-radius:2px;text-decoration:none;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;transition:all .4s ease;}
+.cart-link:hover{background:var(--or);color:var(--noir);}
+.cart-count{position:absolute;top:-9px;right:-9px;background:var(--or);color:var(--noir);font-family:'Jost',sans-serif;font-size:.66rem;font-weight:500;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;letter-spacing:0;}
+.hero{position:relative;text-align:center;padding:120px 24px 100px;background:radial-gradient(ellipse at 50% 0%, rgba(200,168,90,0.10), transparent 60%),linear-gradient(180deg,var(--noir-2) 0%,var(--noir) 100%);}
+.hero .eyebrow{color:var(--or);letter-spacing:6px;text-transform:uppercase;font-size:.72rem;margin-bottom:26px;}
+.hero .partner-logo{height:74px;margin-bottom:34px;}
+.hero h2{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;margin-bottom:24px;color:var(--champagne);}
+.hero h2 em{font-style:italic;color:var(--or-clair);}
+.hero p{color:var(--texte-doux);max-width:560px;margin:0 auto;font-size:1.02rem;font-weight:300;}
+.divider{width:64px;height:1px;background:var(--or);margin:40px auto 0;position:relative;}
+.divider::before,.divider::after{content:"";position:absolute;top:50%;width:5px;height:5px;background:var(--or);border-radius:50%;transform:translateY(-50%);}
+.divider::before{left:-14px;} .divider::after{right:-14px;}
+.section-head{text-align:center;padding:90px 20px 0;}
+.section-head .eyebrow{color:var(--or);letter-spacing:5px;text-transform:uppercase;font-size:.7rem;}
+.section-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:14px;color:var(--champagne);}
+.section-head p{color:var(--texte-doux);margin-top:12px;font-size:.95rem;}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:34px;padding:64px 48px 40px;max-width:1240px;margin:0 auto;}
+.product-card{background:linear-gradient(180deg,var(--carte) 0%,#0e0e10 100%);border:1px solid rgba(200,168,90,0.16);border-radius:4px;overflow:hidden;transition:transform .5s ease,border-color .5s ease,box-shadow .5s ease;display:flex;flex-direction:column;}
+.product-card:hover{transform:translateY(-8px);border-color:var(--or);box-shadow:0 26px 60px -30px rgba(200,168,90,0.5);}
+.product-img{position:relative;width:100%;aspect-ratio:1/1;background:radial-gradient(circle at 50% 38%, rgba(200,168,90,0.10), transparent 65%),#0c0c0e;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(200,168,90,0.14);overflow:hidden;}
+.product-img .photo{width:100%;height:100%;object-fit:cover;display:block;}
+.product-img .photo-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(200,168,90,0.45);text-align:center;padding:20px;}
+.product-img .photo-slot .mono{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--or);border:1px solid var(--or);border-radius:50%;width:74px;height:74px;display:flex;align-items:center;justify-content:center;}
+.product-img .photo-slot span{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;}
+.product-info{padding:30px 28px 34px;display:flex;flex-direction:column;flex:1;}
+.badge{align-self:flex-start;border:1px solid var(--or);color:var(--or-clair);padding:5px 14px;border-radius:2px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
+.product-info h3{font-size:1.6rem;margin-bottom:12px;color:var(--champagne);}
+.product-info .desc{color:var(--texte-doux);font-size:.9rem;margin-bottom:22px;flex:1;}
+.product-info .price{color:var(--or-clair);font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;margin-bottom:24px;}
+.btn-acheter{display:block;text-align:center;background:linear-gradient(135deg,var(--or) 0%,var(--or-clair) 100%);color:var(--noir);padding:14px;border-radius:2px;text-decoration:none;font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:filter .35s ease,transform .35s ease;}
+.btn-acheter:hover{filter:brightness(1.08);transform:translateY(-2px);}
+.footer{text-align:center;padding:70px 24px 56px;background:var(--noir-2);border-top:1px solid var(--ligne);margin-top:60px;}
+.footer .f-divider{width:50px;height:1px;background:var(--or);margin:0 auto 26px;}
+.footer p{color:var(--texte-doux);font-size:.85rem;letter-spacing:1px;}
+.footer .copy{color:var(--or);letter-spacing:3px;text-transform:uppercase;font-size:.7rem;margin-bottom:10px;}
+.footer a{color:var(--or-clair);text-decoration:none;border-bottom:1px solid var(--ligne);}
+@media(max-width:600px){.header{padding:18px 22px;}.products{padding:48px 22px;}}
+</style>
 </head>
 <body>
 
-  <header class="header">
-    <div class="brand">
-      <img src="/logo-eric-favre.png" alt="Eric Favre" />
-      <div class="brand-txt">
-        <h1>Boutique Eric Favre</h1>
-        <p>Partenaire officiel RegenX</p>
-      </div>
-    </div>
-    <a href="/" class="back-btn">Retour RegenX</a>
-  </header>
+<header class="header">
+<div class="brand">
+<img src="/logo-eric-favre.png" alt="Eric Favre" />
+<div class="brand-txt">
+<h1>Boutique Eric Favre</h1>
+<p>Partenaire officiel RegenX</p>
+</div>
+</div>
+<div class="nav-actions">
+<a href="/" class="back-btn">Retour RegenX</a>
+<a href="/panier.html" class="cart-link">Panier<span class="cart-count" id="cart-count">0</span></a>
+</div>
+</header>
 
-  <section class="hero">
-    <p class="eyebrow">Maison de Nutrition Sportive</p>
-    <img src="/logo-eric-favre.png" alt="Eric Favre" class="partner-logo" />
-    <h2>L'Excellence au Service<br/>de la <em>Performance</em></h2>
-    <p>Une selection d'exception : proteines, creatines, bruleurs et packs musculation, choisis avec soin pour les athletes RegenX.</p>
-    <div class="divider"></div>
-  </section>
+<section class="hero">
+<p class="eyebrow">Maison de Nutrition Sportive</p>
+<img src="/logo-eric-favre.png" alt="Eric Favre" class="partner-logo" />
+<h2>L'Excellence au Service<br/>de la <em>Performance</em></h2>
+<p>Une selection d'exception : proteines, creatines, bruleurs et packs musculation, choisis avec soin pour les athletes RegenX.</p>
+<div class="divider"></div>
+</section>
 
-  <div class="section-head">
-    <p class="eyebrow">Collection Exclusive</p>
-    <h2>Nos Produits Phares</h2>
-    <p>Selection partenaire RegenX &times; Eric Favre</p>
-  </div>
+<div class="section-head">
+<p class="eyebrow">Collection Exclusive</p>
+<h2>Nos Produits Phares</h2>
+<p>Selection partenaire RegenX &times; Eric Favre</p>
+</div>
 
-  <div class="products">
+<div class="products">
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/iso-whey-zero.webp" alt="Whey Proteine Pro" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Bestseller</span>
-        <h3>Whey iso Proteine</h3>
-        <p class="desc">82% de protéines isolate pour développement musculaire et définition optimale.</p>
-        <div class="price">79,90 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/iso-whey-zero.webp" alt="Whey Proteine Pro" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Bestseller</span>
+<h3>Whey iso Proteine</h3>
+<p class="desc">82% de protéines isolate pour développement musculaire et définition optimale.</p>
+<div class="price">79,90 &euro;</div>
+<a href="/produits/iso-whey-zero.html" class="btn-acheter">Voir le produit</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/creatine-monohydrate.webp" alt="Creatine Monohydrate" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Populaire</span>
-        <h3>Creatine Monohydrate</h3>
-        <p class="desc">Creatine pure pour augmenter force et performance musculaire. 300g, qualite certifiee.</p>
-        <div class="price">23,90 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/creatine-monohydrate.webp" alt="Creatine Monohydrate" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Populaire</span>
+<h3>Creatine Monohydrate</h3>
+<p class="desc">Creatine pure pour augmenter force et performance musculaire. 300g, qualite certifiee.</p>
+<div class="price">23,90 &euro;</div>
+<a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/bruleur-thermogenique.webp" alt="Bruleur Thermogenique" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Nouveau</span>
-        <h3>Bruleur Thermogenique</h3>
-        <p class="desc">Formule avancee pour soutenir la perte de poids et booster le metabolisme.</p>
-        <div class="price">49,90 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/bruleur-thermogenique.webp" alt="Bruleur Thermogenique" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Nouveau</span>
+<h3>Bruleur Thermogenique</h3>
+<p class="desc">Formule avancee pour soutenir la perte de poids et booster le metabolisme.</p>
+<div class="price">49,90 &euro;</div>
+<a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/pack-prise-de-masse.webp" alt="Pack Prise de Masse" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Pro</span>
-        <h3>Pack Prise de Masse</h3>
-        <p class="desc">Combinaison Whey + Creatine + BCAA pour une prise de masse optimale. Economisez 20%.</p>
-        <div class="price">168,50 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/pack-prise-de-masse.webp" alt="Pack Prise de Masse" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Pro</span>
+<h3>Pack Prise de Masse</h3>
+<p class="desc">Combinaison Whey + Creatine + BCAA pour une prise de masse optimale. Economisez 20%.</p>
+<div class="price">168,50 &euro;</div>
+<a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/bcaa-2-1-1.webp" alt="BCAA 2:1:1" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Recuperation</span>
-        <h3>BCAA 2:1:1</h3>
-        <p class="desc">Acides amines essentiels pour la recuperation musculaire et la reduction de la fatigue.</p>
-        <div class="price">21,90 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/bcaa-2-1-1.webp" alt="BCAA 2:1:1" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Recuperation</span>
+<h3>BCAA 2:1:1</h3>
+<p class="desc">Acides amines essentiels pour la recuperation musculaire et la reduction de la fatigue.</p>
+<div class="price">21,90 &euro;</div>
+<a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <div class="product-img"><img class="photo" src="/produits/pack-seche-complete.webp" alt="Pack Seche Complete" loading="lazy" /></div>
-      <div class="product-info">
-        <span class="badge">Pack Elite</span>
-        <h3>Pack Sèche Extrême</h3>
-        <p class="desc">Programme nutrition complet pour la phase de seche : bruleur + proteines + omega 3.</p>
-        <div class="price">224,50 &euro;</div>
-        <a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
-      </div>
-    </div>
+<div class="product-card">
+<div class="product-img"><img class="photo" src="/produits/pack-seche-complete.webp" alt="Pack Seche Complete" loading="lazy" /></div>
+<div class="product-info">
+<span class="badge">Pack Elite</span>
+<h3>Pack Sèche Extrême</h3>
+<p class="desc">Programme nutrition complet pour la phase de seche : bruleur + proteines + omega 3.</p>
+<div class="price">224,50 &euro;</div>
+<a href="https://www.eric-favre.com" target="_blank" rel="noopener noreferrer" class="btn-acheter">Acheter</a>
+</div>
+</div>
 
-  </div>
+</div>
 
-  <footer class="footer">
-    <div class="f-divider"></div>
-    <p class="copy">RegenX &times; Eric Favre</p>
-    <p>&copy; 2026 — Partenariat officiel</p>
-    <p style="margin-top:10px">Produits disponibles sur <a href="https://www.eric-favre.com" target="_blank">eric-favre.com</a></p>
-  </footer>
+<footer class="footer">
+<div class="f-divider"></div>
+<p class="copy">RegenX &times; Eric Favre</p>
+<p>&copy; 2026 — Partenariat officiel</p>
+<p style="margin-top:10px">Produits disponibles sur <a href="https://www.eric-favre.com" target="_blank">eric-favre.com</a></p>
+</footer>
+
+<script src="/cart.js"></script>
 
 </body>
 </html>
