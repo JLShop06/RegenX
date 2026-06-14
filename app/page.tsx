@@ -28,8 +28,8 @@ const testimonials = [
   { name: 'Camille D.', role: 'Prise de masse', avatar: 'CD', text: '+4 kg de muscle en 4 mois. Le plan nutritionnel est précis et les recettes sont vraiment bonnes.', stars: 5 },
 ];
 
-const GOLD = '#C8922A';
-const GOLD_LIGHT = '#E8B84B';
+const GOLD = '#C8A85A';
+const GOLD_LIGHT = '#E7D3A1';
 
 export default function LandingPage() {
   const router = useRouter();
@@ -48,7 +48,8 @@ export default function LandingPage() {
   }
 
   return (
-    <main style={{ backgroundColor: '#0a0a0a', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ backgroundColor: '#0a0a0a', color: '#fff', minHeight: '100vh', fontFamily: "'Jost', sans-serif", fontWeight: 300 }}>
+      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap');" }} />
       {/* Navbar */}
       <nav style={{ position: 'fixed', top: 0, width: '100%', zIndex: 50, backgroundColor: 'rgba(10,10,10,0.9)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(200,146,42,0.12)' }}>
         <div style={{ maxWidth: '1152px', margin: '0 auto', padding: '0 1.5rem', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -76,7 +77,7 @@ export default function LandingPage() {
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
             <Image src="/logo RengenX.webp" alt="RegenX" width={240} height={240} priority style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 40px rgba(200,146,42,0.35))' }} />
           </div>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 1, marginBottom: '1.5rem', color: '#fff' }}>
+          <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3rem, 8vw, 5.5rem)', fontWeight: 500, letterSpacing: '0.01em', lineHeight: 1.05, marginBottom: '1.5rem', color: '#F2E8D2' }}>
             Ton coach fitness
             <br />
             <span style={{ color: GOLD }}>100 % personnalisé</span>
@@ -113,7 +114,7 @@ export default function LandingPage() {
       <section style={{ borderTop: '1px solid rgba(200,146,42,0.12)', borderBottom: '1px solid rgba(200,146,42,0.12)', padding: '2.5rem 1.5rem' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem', textAlign: 'center' }}>
           {[['2 000+', 'Athlètes actifs'], ['98 %', 'Satisfaction'], ['4,9★', 'Note moyenne'], ['EU', 'Hébergement']].map(([n, l]) => (
-            <div key={l}><div style={{ fontSize: '2rem', fontWeight: 900, color: GOLD, letterSpacing: '-0.02em' }}>{n}</div><div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{l}</div></div>
+            <div key={l}><div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 600, color: GOLD, letterSpacing: '0.01em' }}>{n}</div><div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{l}</div></div>
           ))}
         </div>
       </section>
@@ -123,7 +124,7 @@ export default function LandingPage() {
         <div style={{ maxWidth: '1152px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: '1rem' }}>Fonctionnalités</div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.03em' }}>Tout ce dont tu as besoin</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, letterSpacing: '0.01em', color: '#F2E8D2' }}>Tout ce dont tu as besoin</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
@@ -145,7 +146,7 @@ export default function LandingPage() {
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: '1rem' }}>Témoignages</div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.03em' }}>Ils ont transformé leur corps</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, letterSpacing: '0.01em', color: '#F2E8D2' }}>Ils ont transformé leur corps</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {testimonials.map(t => (
@@ -169,7 +170,7 @@ export default function LandingPage() {
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: '1rem' }}>Tarification</div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.03em' }}>Simple & transparent</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, letterSpacing: '0.01em', color: '#F2E8D2' }}>Simple & transparent</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {plans.map(p => (
@@ -177,7 +178,7 @@ export default function LandingPage() {
                 {p.badge && <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', backgroundColor: GOLD, color: '#0a0a0a', fontSize: '0.6rem', fontWeight: 700, padding: '3px 12px', borderRadius: '2px', letterSpacing: '0.15em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{p.badge}</div>}
                 <div style={{ marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 700 }}>{p.name}</div>
                 <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)', marginBottom: '1.5rem' }}>{p.desc}</div>
-                <div style={{ marginBottom: '1.5rem' }}><span style={{ fontSize: '2.75rem', fontWeight: 900, letterSpacing: '-0.03em', color: p.highlight ? GOLD : '#fff' }}>{p.price}€</span><span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)', marginLeft: '4px' }}>/mois</span></div>
+                <div style={{ marginBottom: '1.5rem' }}><span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 600, letterSpacing: '0.01em', color: p.highlight ? GOLD : '#fff' }}>{p.price}€</span><span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)', marginLeft: '4px' }}>/mois</span></div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.75rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {p.features.map(feat => (<li key={feat} style={{ display: 'flex', gap: '0.6rem', fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', alignItems: 'flex-start' }}><CheckCircle style={{ width: 14, height: 14, color: GOLD, marginTop: '2px', flexShrink: 0 }} />{feat}</li>))}
                 </ul>
@@ -197,7 +198,7 @@ export default function LandingPage() {
       <section style={{ padding: '6rem 1.5rem' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center', backgroundColor: '#111111', border: '1px solid rgba(200,146,42,0.2)', borderRadius: '4px', padding: '4rem 3rem' }}>
           <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: '1.5rem' }}>★ Rejoignez l’élite</div>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '1rem' }}>Prêt à commencer ?</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 500, letterSpacing: '0.01em', color: '#F2E8D2', marginBottom: '1rem' }}>Prêt à commencer ?</h2>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
             Rejoins les 2 000+ athlètes qui ont transformé leur corps avec RegenX.
           </p>
