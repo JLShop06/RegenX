@@ -98,7 +98,7 @@ a{color:inherit;}
   function euro(n){ return n.toFixed(2).replace('.', ',') + ' \u20ac'; }
 
   function render(){
-    var cart = RegenXCart.load();
+    var cart = RegenXCart.get();
     var container = document.getElementById('cart-container');
     if (!cart.length){
       container.innerHTML =
@@ -147,7 +147,7 @@ a{color:inherit;}
     container.querySelectorAll('.qty button').forEach(function(b){
       b.addEventListener('click', function(){
         var key = b.getAttribute('data-key');
-        var cart = RegenXCart.load();
+        var cart = RegenXCart.get();
         var item = cart.filter(function(x){ return RegenXCart.lineKey(x)===key; })[0];
         if(!item) return;
         var q = (item.qty||1) + (b.getAttribute('data-act')==='plus' ? 1 : -1);
