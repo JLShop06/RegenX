@@ -120,7 +120,7 @@
   }
 
   /* ---------- Checkout Stripe ---------- */
-  // Envoie le panier a /api/stripe/checkout. La saveur (variant) est
+  // Envoie le panier a /api/shop/checkout. La saveur (variant) est
   // transmise dans le nom ET en metadata pour apparaitre dans la commande.
   function checkout() {
     var cart = loadCart();
@@ -141,7 +141,7 @@
     var btns = document.querySelectorAll('[data-checkout]');
     btns.forEach(function (b) { b.disabled = true; });
 
-    fetch('/api/stripe/checkout', {
+    fetch('/api/shop/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: items })
