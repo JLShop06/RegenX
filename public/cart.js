@@ -141,7 +141,7 @@
     var btns = document.querySelectorAll('[data-checkout]');
     btns.forEach(function (b) { b.disabled = true; });
 
-    fetch('/api/stripe/checkout', {
+    fetch('/api/shop/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: items })
